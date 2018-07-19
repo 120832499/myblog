@@ -1,0 +1,48 @@
+//引入底层库;
+@import (reference) "base.less";
+
+//默认初始化;
+.base(@content:1000);
+
+/*方法*/
+.f12{
+    .f(12);
+}
+
+/*css3透明*/
+.opa8{
+    .opa(0.8);
+}
+
+/*css3圆角*/
+.border-radius{
+    .border-radius(5px);
+}
+
+/*css3过渡*/
+.transitions{
+    .tran();
+}
+
+/*css3旋转*/
+.rotate60{
+    .css3(transform,rotate(60deg));
+}
+
+/* keyframes 必须放在引用页面调用 */
+.keyframes(@name, @frames) {
+      @-webkit-keyframes @name { @frames(); }
+       @-moz-keyframes @name { @frames(); }
+        @-ms-keyframes @name { @frames(); }
+         @-o-keyframes @name { @frames(); }
+            @keyframes @name { @frames(); }
+}
+
+/*旋转keyframes*/
+.keyframes(rotates,{
+    0% {transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+});
+
+/*引用旋转keyframes*/
+.keyframes-rotates{ .css3(animation,starts 8s linear infinite .3s ); }
